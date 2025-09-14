@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>AfroLogistics Express</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>AfroLogistics Express</h1>
+  </header>
+
+  <section id="galerie">
+    <h2>📸 Nos colis, frais de déplacements, billets, préparations</h2>
+    <div class="galerie-images">
+      <img src="c:\Users\dell\Desktop\Nouveau dossier (2)\WhatsApp Image 2025-09-08 à 12.32.23_7f82a16b.jpg" alt="Documents de voyage">
+      <img src="c:\Users\dell\Desktop\Nouveau dossier (2)\WhatsApp Image 2025-09-08 à 12.30.57_21b0aefe.jpg" alt="Bagages prêts à l’envoi">
+      <img src="c:\Users\dell\Desktop\Nouveau dossier (2)\Livraisons de colis .png" alt="Colis">
+      <img src="c:\Users\dell\Desktop\Nouveau dossier (2)\WhatsApp Image 2025-09-08 à 12.36.34_2cb2c38e.jpg" alt="Billets">
+      <img src="c:\Users\dell\Desktop\Relais Colis et Welc.png" alt="Livraisons de colis">
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>📞 Contact</h2>
+    <button onclick="document.getElementById('infos').style.display='block'">Voir mes infos</button>
+    <div id="infos" style="display:none;">
+      <p><strong>Nom :</strong> Brice Nkoa</p>
+      <p><strong>Email :</strong> briceetoune@gmail.com</p>
+      <p><strong>Téléphone :</strong> +33 7 49 17 88 75</p>
+      <img src="c:\Users\dell\Desktop\WhatsApp Image 2025-09-08 à 12.25.21_7e991ee7.jpg" alt="Brice à l'aéroport" width="150" height="300">
+    </div>
+  </section>
+
+  <section id="tarifs">
+    <h2>💰 Tarifs</h2>
+    <button onclick="document.getElementById('tarif').style.display='block'">Voir le tarif</button>
+    <div id="tarif" style="display:none;">
+      <ul>
+        <li>Colis (23 kg) : <strong>110 €</strong></li>
+        <li>Billet du livreur : <strong>100 €</strong></li>
+        <li>Déplacement du livreur : <strong>90 €</strong></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="simulation">
+    <h2>📦 Simulation d'envoi</h2>
+    <form onsubmit="calculerTarif(event)">
+      <p>Poids du colis : <strong>23 kg</strong> (fixe)</p>
+      <label><input type="checkbox" id="billet" checked disabled> Billet du livreur (100 €)</label><br>
+      <label><input type="checkbox" id="deplacement" checked disabled> Déplacement du livreur (90 €)</label><br><br>
+      <button type="submit">Afficher le tarif</button>
+    </form>
+    <div id="tarif-total"></div>
+  </section>
+
+  <footer>
+    <p>© 2025 AfroLogistics Express</p>
+  </footer>
+
+  <script>
+    function calculerTarif(event) {
+      event.preventDefault();
+      const colis = 110;
+      const billet = 100;
+      const deplacement = 90;
+      const total = colis + billet + deplacement;
+      document.getElementById('tarif-total').innerHTML = `<p><strong>Tarif total :</strong> ${total} €</p>`;
+    }
+  </script>
+</body>
+</html>
+
